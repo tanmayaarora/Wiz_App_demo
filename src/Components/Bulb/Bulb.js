@@ -10,7 +10,12 @@ const Bulb = ({id}) => {
         id={id}
         onClick={() => setBulbOn((state) => !state)}
         >
-            <div className="rect"></div>
+            <div className="rect">
+                <div className="ring"></div>
+                <div className="ring m-top-3"></div>
+                <div className="ring m-top-3"></div>
+                <div className="ring m-top-3"></div>
+            </div>
         </div>
     );
 }
