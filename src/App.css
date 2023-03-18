@@ -30,3 +30,7 @@ button {
 .m-top-3 {
   margin-top: 3px;
 }
+
+.d-inline-block {
+  display: inline-block;
+}
