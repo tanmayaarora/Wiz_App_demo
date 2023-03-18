@@ -1,21 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import BulbBase from "../BulbBase/BulbBase";
 import "./Bulb.css";
 
 const Bulb = ({id}) => {
     const [bulbOn, setBulbOn] = useState(false);
-    console.log("BulbOn ",bulbOn);
+    const [bulbClass, setBulbClass] = useState("");
+    
+    useEffect(() => {
+        if(bulbOn) {
+            setBulbClass("bg-blue");
+        }
+        else {
+            setBulbClass("");
+        }
+    }, [bulbOn]);
     return (
         <div
-        className={`bulb ${bulbOn === true ? "bg-blue" : ""}`}
+        className={`bulb ${bulbClass}`}
         id={id}
         onClick={() => setBulbOn((state) => !state)}
         >
-            <div className="rect">
-                <div className="ring"></div>
-                <div className="ring m-top-3"></div>
-                <div className="ring m-top-3"></div>
-                <div className="ring m-top-3"></div>
-            </div>
+            <BulbBase/>
         </div>
     );
 }
